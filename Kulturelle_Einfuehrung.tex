@@ -1,0 +1,47 @@
+% !TeX document-id = {a6d7d9d5-76b4-4dad-a3c5-692f58f47416}
+% !TEX TS-program = XeLaTeX
+
+\documentclass[12pt, notitlepage]{ctexbook}
+\usepackage{xeCJK}
+%\usepackage[cap]{ctex}
+
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{xcoffins}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage[a4paper]{geometry}
+\usepackage{setspace}
+\usepackage{emptypage}
+\usepackage{titlesec}
+
+% Set up commands for title page generation
+\definecolor{ethblue}{RGB}{31, 64, 122}
+
+
+\newfontfamily\dinprobold{KaiTi}
+\newfontfamily\dinproregular{FandolHei}
+\newfontfamily\dinprolight{KaiTi}
+\graphicspath{ {images/} }
+
+\titleformat{\chapter}[display]%
+{\heiti\zihao{1}}%
+{第\zhnumber\thechapter 章}{10pt}%
+{}[\vspace*{2cm}]
+
+\begin{document}
+	\pagestyle{plain}
+
+	\input{cover}
+	\cleardoublepage
+	\pagenumbering{roman}
+	\input{foreword}
+
+	\tableofcontents
+	\pagenumbering{arabic}
+	\cleardoublepage
+	\pagestyle{headings}	
+	\input{Essen/Essen}
+	
+\end{document}
