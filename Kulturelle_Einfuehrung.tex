@@ -1,10 +1,9 @@
-% !TeX document-id = {a6d7d9d5-76b4-4dad-a3c5-692f58f47416}
 % !TEX TS-program = XeLaTeX
 
 \documentclass[12pt, notitlepage]{ctexbook}
 \usepackage{xeCJK}
-%\usepackage[cap]{ctex}
-
+\usepackage[font=small]{caption}
+\usepackage{tikz}
 \usepackage{fancyhdr}
 \usepackage{amsmath}
 \usepackage{graphicx}
@@ -15,7 +14,6 @@
 \usepackage{setspace}
 \usepackage{emptypage}
 \usepackage{titlesec}
-
 % Set up commands for title page generation
 \definecolor{ethblue}{RGB}{31, 64, 122}
 
@@ -24,11 +22,15 @@
 \newfontfamily\dinproregular{FandolHei}
 \newfontfamily\dinprolight{KaiTi}
 \graphicspath{ {images/} }
-
+\newcommand\chapterdecoration{%
+	\begin{tikzpicture}[remember picture,overlay,shorten >= -10pt]
+	\filldraw[black,line width=0,rounded corners=0] (0,2.5) rectangle (\linewidth,2.55);
+	\end{tikzpicture}%
+}
 \titleformat{\chapter}[display]%
 {\heiti\zihao{1}}%
 {第\zhnumber\thechapter 章}{10pt}%
-{}[\vspace*{2cm}]
+{}[\vspace*{2cm}\chapterdecoration]
 
 \begin{document}
 
@@ -46,11 +48,13 @@
 	\vspace{12pt}
 	\zihao{-2}\songti ——中德文化差异百科\par
 	\vspace{8cm}
-	\dinprolight\zihao{4}
+	\heiti\zihao{-3}
 	%\includegraphics{logo}
 	\raggedright
-	项目成员\\
+	项目成员:\\
 	
+	\vspace*{1em}
+	\zihao{4}
 	黄伟根\\
 	黄耀鑫 \hspace{1em} 杨星林 \hspace{1em} 詹均升 \\
 	张嘉伟 \hspace{1em} 周功豪 \hspace{1em} 周鹏 \\
