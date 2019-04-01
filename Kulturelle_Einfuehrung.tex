@@ -1,6 +1,8 @@
 % !TEX TS-program = XeLaTeX
 
-\documentclass[12pt, notitlepage]{ctexbook}
+\documentclass[12pt, notitlepage,
+draft
+]{ctexbook}
 \usepackage{xeCJK}
 \usepackage[font=small]{caption, subcaption}
 \usepackage{tikz}
@@ -19,9 +21,10 @@
 \definecolor{ethblue}{RGB}{31, 64, 122}
 
 
-\newfontfamily\dinprobold{KaiTi}
-\newfontfamily\dinproregular{FandolHei}
-\newfontfamily\dinprolight{KaiTi}
+\newfontfamily\dinprobold{HBLiXuKeShuFa}
+\newCJKfontfamily\cnprobold{HBLiXuKeShuFa}
+\newCJKfontfamily\cnproregular{HBLiXuKeShuFa}
+\newCJKfontfamily\cnprolight{KaiTi}
 \graphicspath{ {images/} }
 \newcommand\chapterdecoration{%
 	\begin{tikzpicture}[remember picture,overlay,shorten >= -10pt]
@@ -41,13 +44,15 @@
 	\thispagestyle{empty}
 	\begin{titlepage}
 	\centering
-	\vspace*{6cm}
+	%\vspace*{8cm}
 	\noindent
 	\center
-	\begin{minipage}{0.7\linewidth}
-	\zihao{0}\heiti CDAI文化指南\par
+	\begin{minipage}{\linewidth}
+	%\zihao{0}\heiti CDAI文化指南\par
+	\fontsize{60}{72}\cnprobold{\dinprobold{CDAI}文化指南}\par
 	\vspace{12pt}
-	\zihao{-2}\songti ——中德文化差异百科\par
+	%\zihao{-2}\songti ——中德文化差异百科\par
+	\fontsize{21}{25}\cnproregular{——中德文化差异小百科}\par
 	\vspace{8cm}
 	\heiti\zihao{-3}
 	%\includegraphics{logo}
@@ -60,6 +65,9 @@
 	黄耀鑫 \hspace{1em} 杨星林 \hspace{1em} 詹均升 \\
 	张嘉伟 \hspace{1em} 周功豪 \hspace{1em} 周鹏 \\
 	\end{minipage}
+	\vfill
+	\zihao{3}\cnprolight{中德工程师学院}\par
+	\href{http://cdai.zust.edu.cn/}{\texttt{http://cdai.zust.edu.cn/}}
 	\end{titlepage}
 
 	\cleardoublepage
